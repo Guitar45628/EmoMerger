@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinterdnd2 import DND_FILES, TkinterDnD
+from tkinterdnd2 import *
 from tkinter import ttk, filedialog, messagebox
 import os
 import pandas as pd
