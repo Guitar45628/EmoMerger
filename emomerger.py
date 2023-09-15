@@ -196,6 +196,8 @@ class CSVMergerApp(QMainWindow):
                 merged_data = pd.concat(data_list, axis=0, ignore_index=True, sort=False)
                 merged_data = merged_data.groupby('LocalTimestamp', as_index=False).agg('sum')
                 merged_data.fillna('', inplace=True)
+                merged_data.replace(0.0, '', inplace=True)
+
 
                 merged_data.to_csv(output_file_name, index=False)
                 QMessageBox.information(self, "Success", f"รวมข้อมูลเสร็จสิ้น ไฟล์ถูกบันทึกที่ {output_file_name}")
